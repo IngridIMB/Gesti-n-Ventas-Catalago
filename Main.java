@@ -1,19 +1,24 @@
+/**
+ * CLASE PRINCIPAL (Main) - Actividad Formativa 3
+ */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=== SISTEMA DE GESTIÓN DE VENTAS POR CATÁLOGO ===\n");
+        System.out.println("--- SISTEMA DE GESTIÓN DE VENTAS POR CATÁLOGO ---\n");
 
-        PedidoCatalogos pedido1 = new PedidoCatalogos("María López", "Calzado", 2400.0);
-        PedidoCatalogos pedido2 = new PedidoCatalogos("Laura Gómez", "Fragancias", 850.0);
+        // Creamos un objeto de la subclase (PedidoEspecial) usando Herencia
+        PedidoEspecial pedidoEspecial1 = new PedidoEspecial("Ingrid Martínez", "Cosméticos", 1200.0, 15.0, "Set de Fragancias María María");
 
-        System.out.println("--- Pedidos Registrados ---");
-        pedido1.mostrarResumen();
-        pedido2.mostrarResumen();
-
-        System.out.println("\n--- Procesamiento de Pagos ---");
-        pedido1.registrarPago();
-
-        System.out.println("\n--- Estado Actualizado de Pedidos ---");
-        pedido1.mostrarResumen();
-        pedido2.mostrarResumen();
+        // Mostramos el resumen (ejecuta el método heredado y el sobrescrito con @Override)
+        pedidoEspecial1.mostrarResumen();
+        
+        System.out.println();
+        
+        // Ejecutamos el método heredado de la clase base
+        pedidoEspecial1.registrarPago();
+        
+        System.out.println();
+        
+        // Ejecutamos el método exclusivo de la subclase
+        pedidoEspecial1.mostrarDetalleRegalo();
     }
 }
